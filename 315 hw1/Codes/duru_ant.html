@@ -1,0 +1,79 @@
+// Initializing the associative array
+var myMap = {"first": 1, "second": 2, "third": 3, "fourth":4, "fifth":5}
+console.log("1-Associative array has been initialized.");
+
+// Getting the value given key
+console.log("2-Getting value given a key.");
+var myValue = myMap["second"];
+console.log("the value for the key \"second\" is: ");
+console.log(myValue);
+
+// Add a new element
+console.log("3-Adding a new element.");
+myMap["sixth"] = 6;
+console.log("A new element with key \"sixth\" and value 6 has been added.");
+
+// Removing an element
+console.log("4-Removing an element.");
+delete myMap["third"];
+console.log("The element with key \"third\" has been removed.");
+
+// Modifying an element
+console.log("5-Modifying an element.");
+console.log("Before Modify, the element with key \"fourth\" had value: ");
+console.log(myMap["fourth"]);
+myMap["fourth"] = 8;
+console.log("After Modify, the element with key \"fourth\" has value: ");
+console.log(myMap["fourth"]);
+
+// Search existence of key
+console.log("6-Search existence of key \"first\".");
+if (myMap["first"] !== null)
+{
+    console.log("the key \"first\" is in the map with value: ");
+    console.log(myMap["first"]);
+}
+else
+{
+    console.log("the key \"first\" is not in the map");
+}
+
+// Search existence of value
+console.log("7-Search existence of value 8");
+var bool = false;
+var k;
+for(var key in myMap) {
+    if(myMap.hasOwnProperty(key)) {
+        if(myMap[key] == 8)
+        {
+            bool = true;
+            k = key;
+            break;
+        }
+    }
+}
+if(bool === true)
+{
+    console.log("the value 8 exists in the map with key: ");
+    console.log(k);
+}
+else
+{
+    console.log("the value 8 does not exist in the map");
+}
+
+function foo( k, v){
+	console.log("key: ");
+	console.log(k);
+	console.log("value: ");
+	console.log(v);
+	console.log("-------");
+}
+
+// Loop to iterate through map and print pairs
+console.log("------8-LOOP TO ITERATE-------");
+for (let k in myMap)
+{
+    var value = myMap[k];
+    foo(k, value);
+}
